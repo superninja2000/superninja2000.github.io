@@ -2,6 +2,23 @@
 <html>
 <head><title>SuperNinja2000's Games</title></head>
 <body style="background-color: black;">
+  <audio id="lofi" autoplay loop muted playsinline>
+  <source src="lofi_loop.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('lofi');
+      audio.muted = false;
+      audio.play().catch(() => {
+        document.body.addEventListener('click', () => {
+          audio.muted = false;
+          audio.play();
+        }, { once: true });
+      });
+    });
+  </script>
+
   <div style="display:flex; align-items:center; gap:20px;">
     <a href="https://superninja2000.github.io/games.html">
     <img src="games_logo.png" alt="Games Link" style="width: 150px;">
