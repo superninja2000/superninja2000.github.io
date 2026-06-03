@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head><title>About Me</title></head>
+<body style="background-color: black;">
+  <audio id="lofi" autoplay loop muted playsinline>
+  <source src="lofi_loop.mp3" type="audio/mpeg">
+  </audio>
 
+  <script>
+    window.addEventListener('load', () => {
+      const audio = document.getElementById('lofi');
+      audio.muted = false;
+      audio.play().catch(() => {
+        document.body.addEventListener('click', () => {
+          audio.muted = false;
+          audio.play();
+        }, { once: true });
+      });
+    });
+  </script>
+
+  <div style="display:flex; align-items:center; gap:20px;">
+    <a href="https://superninja2000.github.io/games.html">
+    <img src="games_logo.png" alt="Games Link" style="width: 150px;">
+    </a>
+  </div>
+  <div style="display:flex; align-items:center; gap:20px; border: 5px solid green; border-radius: 10px;">
+    <a href="https://superninja2000.github.io/">
+    <img src="SuperNinja2000_logo.png" alt="SuperNinja2000 Logo" style="width: 250px;">
+    </a>
+    <h1 style="color: green; text-align: center; font-size: 115px;">About Me</h1>
+  </div>
+</body>
+</html>
